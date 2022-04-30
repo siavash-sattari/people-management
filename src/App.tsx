@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import List from './components/List';
+
 interface IPeople {
   id: number;
   fullName: string;
@@ -22,6 +24,7 @@ const App = () => {
   return (
     <div className='container'>
       <h4 className='alert alert-info'>مدیریت اشخصاص</h4>
+      <List people={people} />
     </div>
   );
 };
