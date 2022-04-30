@@ -1,13 +1,22 @@
-import { FC } from 'react';
-import { IPeople } from '../App';
+import { Dispatch, FC, SetStateAction } from 'react';
+import { AiOutlineUserDelete } from 'react-icons/ai';
+
+import { IPeople } from './../App';
 
 interface IProps {
   people: IPeople[];
+  setPeople: Dispatch<SetStateAction<IPeople[]>>;
 }
 
-const List: FC<IProps> = ({ people }) => {
+const List: FC<IProps> = ({ people, setPeople }) => {
+  const handleDeletePeople = (id: number): void => {
+    const persons: IPeople[] = [...people];
+    const filtredPeople: IPeople[] = persons.filter(person => person.id !== id);
+    setPeople(filtredPeople);
+  };
+
   const renderList: JSX.Element[] = people.map(p => (
-    <div className='col-12 col-lg-6 mb-2'>
+    <div key={p.id} className='col-12 col-lg-6 mb-2'>
       <div className='card'>
         <div className='card-body d-flex align-items-center'>
           <img
@@ -24,6 +33,13 @@ const List: FC<IProps> = ({ people }) => {
             </p>
             <p className='text-muted'>{p.bio}</p>
           </div>
+        </div>
+        <div className='operation_btns'>
+          <AiOutlineUserDelete
+            className='text-danger m-1'
+            onClick={() => handleDeletePeople(p.id)}
+            size={30}
+          />
         </div>
       </div>
     </div>

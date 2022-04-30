@@ -38,7 +38,7 @@ const AddPerson: FC<IProps> = ({ people, setPeople }) => {
     setPeople([
       ...people,
       {
-        id: 2,
+        id: Math.floor(Math.random() * 10000),
         fullName,
         age: Number(age),
         img_url,
