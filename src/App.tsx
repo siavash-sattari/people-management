@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import AddPerson from './components/AddPerson';
 
 import List from './components/List';
 
@@ -25,6 +26,7 @@ const App = () => {
     <div className='container'>
       <h4 className='alert alert-info'>مدیریت اشخصاص</h4>
       <List people={people} />
+      <AddPerson people={people} setPeople={setPeople} />
     </div>
   );
 };

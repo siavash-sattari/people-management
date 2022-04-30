@@ -7,7 +7,7 @@ interface IProps {
 
 const List: FC<IProps> = ({ people }) => {
   const renderList: JSX.Element[] = people.map(p => (
-    <div className='col-12 col-lg-6'>
+    <div className='col-12 col-lg-6 mb-2'>
       <div className='card'>
         <div className='card-body d-flex align-items-center'>
           <img
@@ -20,7 +20,7 @@ const List: FC<IProps> = ({ people }) => {
           <div className='mx-3'>
             <p>
               <span className='h2'>{p.fullName}</span>
-              <span className='badge bg-primary me-3'>سال {p.age}</span>
+              <span className='badge bg-primary me-3'>{p.age} سال</span>
             </p>
             <p className='text-muted'>{p.bio}</p>
           </div>
