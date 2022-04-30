@@ -8,7 +8,7 @@ export interface IPeople {
   fullName: string;
   age: number;
   img_url: string;
-  bio: string;
+  bio?: string;
 }
 
 const App = () => {
