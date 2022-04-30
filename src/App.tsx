@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import List from './components/List';
 
-interface IPeople {
+export interface IPeople {
   id: number;
   fullName: string;
   age: number;

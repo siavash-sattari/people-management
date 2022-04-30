@@ -1,12 +1,5 @@
 import { FC } from 'react';
-
-interface IPeople {
-  id: number;
-  fullName: string;
-  age: number;
-  img_url: string;
-  bio: string;
-}
+import { IPeople } from '../App';
 
 interface IProps {
   people: IPeople[];
