@@ -1,18 +1,27 @@
+import { useState } from 'react';
+
+interface IPeople {
+  id: number;
+  fullName: string;
+  age: number;
+  img_url: string;
+  bio: string;
+}
+
 const App = () => {
+  const [people, setPeople] = useState<IPeople[]>([
+    {
+      id: 1,
+      fullName: 'محمد رضایی',
+      age: 29,
+      img_url: '',
+      bio: 'طراح و توسعه دهنده وب'
+    }
+  ]);
+
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'>
-          Learn React
-        </a>
-      </header>
+    <div className='container'>
+      <h4 className='alert alert-info'>مدیریت اشخصاص</h4>
     </div>
   );
 };
