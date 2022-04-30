@@ -1,3 +1,5 @@
+import { FC } from 'react';
+
 interface IPeople {
   id: number;
   fullName: string;
@@ -10,7 +12,7 @@ interface IProps {
   people: IPeople[];
 }
 
-const List = ({ people }: IProps) => {
+const List: FC<IProps> = ({ people }) => {
   return <div>List</div>;
 };
 
